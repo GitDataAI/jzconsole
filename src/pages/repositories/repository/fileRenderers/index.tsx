@@ -12,9 +12,11 @@ import {
     TextRenderer,
     UnsupportedFileType
 } from "./simple";
+import suffixName from "./suffixNameMap";
 
 
 const MAX_FILE_SIZE = 20971520; // 20MiB
+
 
 
 export const Renderers: {[fileType in FileType] : FC<RendererComponent> } = {
@@ -48,10 +50,18 @@ export const Renderers: {[fileType in FileType] : FC<RendererComponent> } = {
     [FileType.TOO_LARGE]: props => (
         <ObjectTooLarge {...props}/>
     ),
+    [FileType.JS]: props => (
+        <TextDownloader {...props} onReady={text =>
+            <TextRenderer {...props} text={text}/>}
+        />
+    ),
 }
 
 export const guessLanguage =  (extension: string | null, contentType: string | null) => {
-    if (extension && SyntaxHighlighter.supportedLanguages.includes(extension)) {
+    
+    const supportLanguage = suffixName.get(extension) ?? extension
+
+    if (extension && SyntaxHighlighter.supportedLanguages.includes(supportLanguage)) {
         return extension;
     }
     if (contentType) {
@@ -142,6 +152,8 @@ export function guessType(contentType: string | null, fileExtension: string | nu
         case 'yml':
         case 'json':
             return FileType.TEXT
+        case 'js':
+            return FileType.JS
     }
     if (guessLanguage(fileExtension, contentType))
         return FileType.TEXT

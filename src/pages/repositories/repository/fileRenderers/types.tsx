@@ -30,4 +30,5 @@ export enum FileType {
     TEXT,
     UNSUPPORTED,
     TOO_LARGE,
+    JS
 }
