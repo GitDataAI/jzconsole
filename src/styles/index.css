@@ -20,18 +20,26 @@ a {
   margin-left: 10px;
 }
 .login-box {
-  display: grid;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .login-box img {
-  margin-left: 100px;
-  height: 100px;
-  width: 100px;
+  height: 48px;
+  width: 48px;
 }
 .login-box .Signtittle {
-  margin-left: 50px;
   font-size: 24px;
+  color: #1f3238;
+  font-weight: 300;
 }
+
+.label-title {
+  font-size: 14px;
+  padding-left: 8px;
+}
+
 .login-display {
   width: 400px;
   height: 450px;
@@ -61,16 +69,21 @@ a {
   justify-content: center;
   background-color: white;
   width: 332px;
-  height: 450px;
+  height: 342px;
   border: 1px solid #95a3a7;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   margin-top: 10px;
 }
+
+.login-widget.register.card {
+  height: 450px;
+}
+
 .login-widget.jiaozi-login.card .card-header {
-  height: 80px;
+  height: 70px;
 }
 .login-widget.jiaozi-login.card .card-body {
-  margin-bottom: 100px;
+  margin-bottom: 138px;
 }
 .login-widget.jiaozi-login.card a {
   display: inline-block;
@@ -176,7 +189,7 @@ a {
   padding: 0.5rem 1rem;
 }
 .sidebar form .navbar-username {
-  margin: 12px ;
+  margin: 12px;
   margin-left: 22px;
   margin-bottom: 22px;
 }
@@ -255,7 +268,7 @@ a {
 }
 .welcome code {
   color: #827a7e;
-  margin: auto  ;
+  margin: auto;
 }
 .welcome img {
   width: 70px;
