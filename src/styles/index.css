@@ -20,16 +20,15 @@ a {
   margin-left: 10px;
 }
 .login-box {
-  display: grid;
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .login-box img {
-  margin-left: 100px;
   height: 100px;
   width: 100px;
 }
 .login-box .Signtittle {
-  margin-left: 50px;
   font-size: 24px;
 }
 .login-display {
@@ -176,7 +175,7 @@ a {
   padding: 0.5rem 1rem;
 }
 .sidebar form .navbar-username {
-  margin: 12px ;
+  margin: 12px;
   margin-left: 22px;
   margin-bottom: 22px;
 }
@@ -255,7 +254,7 @@ a {
 }
 .welcome code {
   color: #827a7e;
-  margin: auto  ;
+  margin: auto;
 }
 .welcome img {
   width: 70px;
@@ -266,8 +265,11 @@ a {
   margin: 20px auto;
 }
 .Progress {
+  position: relative;
   width: 40%;
-  margin: 10rem auto;
+  display: flex;
+  justify-content: center;
+  /* margin: 1rem auto; */
 }
 .Progress .progress-bar {
   background-color: #95a3a7;
